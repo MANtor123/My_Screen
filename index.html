@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel='stylesheet' href='my_screen.css'>
+    <script type="text/javascript" src="script/handlebars-v4.0.5.js"> </script>
     <meta charset="utf-8">
     <title>My Screen</title>
   </head>
   <body>
-    <h1> HOUSING PROJECT </h1>
+  <h1> HOUSING PROJECT </h1>
+  <script id='dropTemplate' type="text/handlebars-x">
+  <select id='myStreet'>
+  <option class='street' disabled selected>Street</option>
+  {{#each streetKey}}
+  <option class='street' value='{{this}}'>{{this}}</option>
+  {{/each}}
+  </select>
+  </script>
+
+  <script id='viewTemplate' type="text/handlebars-x">
+  <table>
+  <th> AREA </th>
+  <th> STREET </th>
+  <th> HOUSE NUMBER </th>
+
+  {{#each areaList}}
+  <tr>
+  <td> {{area}} </td>
+  <td> {{street}} </td>
+  <td> {{number}} </td>
+  {{/each}}
+  <tr>
+  </table>
+  </script>
+
+  <input id='view' type="button" value="VIEW"> </input>
+  <div id='display'> </div>
+  <div id='output'> </div>
+
+  <h2>New Address</h2>
+
+  <div class='layout'>
+  <input id='area' type="text" placeholder='enter area' name='area'> </input><br><br>
+  <input id='street' type="text" placeholder="enter street" name="street"> </input><br><br>
+  <input id='number' type='number' placeholder="enter house number" name="number"> </input><br><br>
+  <input id='add' type="button" value='ADD'> </input>
+  </div>
+
+  <script src="my_screen.js"> </script>
   </body>
 </html>
