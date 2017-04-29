@@ -46,17 +46,28 @@ for(var i = 0; i < areaList.length; i++){
     streets.push(area.street);
   }
 }
-
+return streets;
 };
 
-//function that calls its self
-(function (){
+//------function that calls its self------//
+// (function (){
+//   var streetList = street();
+//
+//   var result = temp ({streetKey:streets});
+//   display.innerHTML = result;
+//
+// }) ();
+
+function streetDrop(){
   var streetList = street();
 
-  var result = temp ({streetKey:streets});
-  display.innerHTML = result;
-
-}) ();
+  streets.sort(function(a,b){
+  return a - b;
+    });
+    var result = temp ({streetKey:streets});
+    display.innerHTML = result;
+}
+streetDrop();
 
 
 button.addEventListener('click', function(){
@@ -103,7 +114,7 @@ if(!streetName == ''){
 var results = viewTem ({areaList : areaList});
 output.innerHTML = results;
 
-var result = temp ({streetKey:streets});
-display.innerHTML = result;
-
+// var result = temp ({streetKey:streets});
+// display.innerHTML = result;
+streetDrop();
 });
