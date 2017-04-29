@@ -77,6 +77,23 @@ output.innerHTML = results;
 
 });
 
+//filtering
+function myFunction(){
+var streetValue = document.querySelector('#myStreet')
+streetValue.value
+streetFilter = [];
+
+for (var i =0; i < areaList.length; i++){
+  var areaLi = areaList[i]
+  if(areaLi.street === streetValue.value){
+    streetFilter.push(areaLi)
+  }
+}
+var results = viewTem ({areaList : streetFilter});
+output.innerHTML = results;
+
+}
+
 areaMap = {};
 addButton.addEventListener('click', function(){
 var street = document.getElementById('street');

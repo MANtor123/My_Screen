@@ -9,7 +9,7 @@
   <body>
   <h1> HOUSING PROJECT </h1>
   <script id='dropTemplate' type="text/handlebars-x">
-  <select id='myStreet'>
+  <select id='myStreet' onchange='myFunction()'>
   <option class='street' disabled selected>Street</option>
   {{#each streetKey}}
   <option class='street' value='{{this}}'>{{this}}</option>
