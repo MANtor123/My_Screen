@@ -1,8 +1,58 @@
 body {
   text-align: center;
+  background-color: #e2fee2;
 }
 
 .layout{
   display: block;
+  border: 2px solid grey;
+  background-color: grey;
+  width: 100%;
+}
 
+#display {
+  margin: 31px;
+  font-size: 24px;
+}
+
+table {
+  width: 60%;
+  text-align: center;
+  font-size: 20px;
+}
+
+tr:hover{
+  background-color:#98FB98;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th{
+background-color:#00FF00;
+border: 1px solid black;
+}
+
+table, th, td{
+   border: 1px solid black;
+}
+
+#output {
+  margin: 115px;
+}
+
+#area{
+  margin: 17px;
+  height: 26px;
+}
+
+#number{
+  margin: 17px;
+  height: 26px;
+}
+
+#street {
+  margin: 17px;
+  height: 26px;
 }

@@ -113,7 +113,7 @@ var names ={
 
 areaList.push(names);
 streets.push(names.street)
-console.log(areaList,streets)
+
 if(!streetName == ''){
   var name = areaMap[streetName]
   if(name = undefined){
