@@ -37,13 +37,14 @@ var areaList = [
 ];
 
 var streets = [];
-function street(){
+function uniqueStreet(data){
 var streetMap = {};
-for(var i = 0; i < areaList.length; i++){
-  var area = areaList[i]
-  if(streetMap[area.street] === undefined){
-    streetMap[area.street] = area.street
-    streets.push(area.street);
+for(var i = 0; i < data.length; i++){
+  var listArea = data[i];
+
+  if(streetMap[listArea.street] === undefined){
+    streetMap[listArea.street] = listArea.street
+    streets.push(listArea.street);
   }
 }
 return streets;
@@ -59,9 +60,9 @@ return streets;
 // }) ();
 
 function streetDrop(){
-  var streetList = street();
+  var streetList = uniqueStreet(areaList);
 
-  streets.sort(function(a,b){
+  streetList.sort(function(a,b){
   return a - b;
     });
     var result = temp ({streetKey:streets});
@@ -104,34 +105,26 @@ var streetName = street.value
 var areaName = area.value
 var numberName = number.value
 
-name ={
-  area : areaName,
+var names ={
   street : streetName,
-  number : numberName
+  number : numberName,
+  area : areaName
 };
-areaList.push(name);
 
-console.log(areaList)
+areaList.push(names);
+streets.push(names.street)
+console.log(areaList,streets)
 if(!streetName == ''){
   var name = areaMap[streetName]
   if(name = undefined){
-    name ={
-      area : areaName,
-      street : streetName,
-      number : numberName
-    };
-
     areaMap[streetName] = name;
   }
-  else {
 
-  }
 }
+
+var result = temp ({streetKey:streets});
+display.innerHTML = result;
 
 var results = viewTem ({areaList : areaList});
 output.innerHTML = results;
-
-// var result = temp ({streetKey:streets});
-// display.innerHTML = result;
-streetDrop();
 });
