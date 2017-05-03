@@ -36,19 +36,28 @@ var areaList = [
 },
 ];
 
+
+
 var streets = [];
 function uniqueStreet(data){
+  var uniqueStreets = [];
 var streetMap = {};
+
 for(var i = 0; i < data.length; i++){
   var listArea = data[i];
+  console.log(listArea.street);
 
   if(streetMap[listArea.street] === undefined){
-    streetMap[listArea.street] = listArea.street
-    streets.push(listArea.street);
+    streetMap[listArea.street] = listArea.street;
+
+    uniqueStreets.push(listArea.street);
   }
 }
-return streets;
+var result = temp ({streetKey:uniqueStreets});
+display.innerHTML = result;
 };
+
+uniqueStreet(areaList);
 
 //------function that calls its self------//
 // (function (){
@@ -58,18 +67,6 @@ return streets;
 //   display.innerHTML = result;
 //
 // }) ();
-
-function streetDrop(){
-  var streetList = uniqueStreet(areaList);
-
-  streetList.sort(function(a,b){
-  return a - b;
-    });
-    var result = temp ({streetKey:streets});
-    display.innerHTML = result;
-}
-streetDrop();
-
 
 button.addEventListener('click', function(){
 
@@ -122,8 +119,7 @@ if(!streetName == ''){
 
 }
 
-var result = temp ({streetKey:streets});
-display.innerHTML = result;
+uniqueStreet(areaList)
 
 var results = viewTem ({areaList : areaList});
 output.innerHTML = results;
