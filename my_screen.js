@@ -45,8 +45,7 @@ var streetMap = {};
 
 for(var i = 0; i < data.length; i++){
   var listArea = data[i];
-  console.log(listArea.street);
-
+  
   if(streetMap[listArea.street] === undefined){
     streetMap[listArea.street] = listArea.street;
 
